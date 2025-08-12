@@ -8,3 +8,6 @@
 - h2 DB
 - thymeleaf
 - spring web
+
+## 2025-8-12 JPA 강의 ~8강
+- JPA 기본 셋팅 및 테스트 코드 까지 진행
