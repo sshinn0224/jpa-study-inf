@@ -32,11 +32,11 @@ public class OrderRepository {
 
         List<Predicate> criteria = new ArrayList<>();
         if(orderSearch.getOrderStatus() != null) {
-            criteria.add(cb.equal(m.get("status"), orderSearch.getOrderStatus()));
+            criteria.add(cb.equal(root.get("status"), orderSearch.getOrderStatus()));
         }
 
         if(orderSearch.getMemberName() != null) {
-            criteria.add(cb.equal(m.get("memberName"), orderSearch.getMemberName()));
+            criteria.add(cb.like(m.get("name"), orderSearch.getMemberName()));
         }
 
 

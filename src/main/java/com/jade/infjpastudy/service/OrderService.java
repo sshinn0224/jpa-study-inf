@@ -8,6 +8,7 @@ import com.jade.infjpastudy.domain.item.Item;
 import com.jade.infjpastudy.repository.ItemRepository;
 import com.jade.infjpastudy.repository.MemberRepository;
 import com.jade.infjpastudy.repository.OrderRepository;
+import com.jade.infjpastudy.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,8 +46,8 @@ public class OrderService {
         order.cancel();
     }
 
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
+    }
 
 }
