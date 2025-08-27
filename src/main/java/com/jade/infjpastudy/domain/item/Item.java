@@ -22,21 +22,21 @@ public abstract class Item {
 
     private String name;
     private int price;
-    private int stackQuantity;
+    private int stockQuantity;
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 
     public void addStock(int quantity) {
-        this.stackQuantity += quantity;
+        this.stockQuantity += quantity;
     }
 
     public void removeStock(int quantity) {
-        int resetStock = this.stackQuantity - quantity;
+        int resetStock = this.stockQuantity - quantity;
         if(resetStock < 0) {
             throw new NotEnoughStockException("need more stock");
         }
-        this.stackQuantity = resetStock;
+        this.stockQuantity = resetStock;
     }
 
 }
